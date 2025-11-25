@@ -1,7 +1,9 @@
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
-#include "class_project.cpp"
+#include "class_project_bet.cpp"
+#include "class_project_player1.cpp"
+#include "class_project_roulette.cpp"
 using namespace std;
 
 int main() {                                          //This is the main program
@@ -60,4 +62,5 @@ int main() {                                          //This is the main program
     cout << "\nGame over. Thanks for playing!\n";
 
     return 0;
+
 }
