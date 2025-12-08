@@ -14,6 +14,25 @@ private:
 public:
     Bet(double amt, BetType t, int c) : amount(amt), type(t), choice(c) {}
 
+        // Static helpers to identify color and column from result
+    static int checkColor(int n) {
+        if (n == 0) return 0;
+        static const set<int> reds = {
+            1,3,5,7,9,12,14,16,18,
+            19,21,23,25,27,30,32,34,36
+        };
+        return (reds.count(n) ? 1 : 2);
+    }
+
+    static int checkColumn(int n) {
+        if (n == 0) return 0;
+        int mod = n % 3;
+        if (mod == 1) return 1;
+        if (mod == 2) return 2;
+        return 3;
+    }
+
+
     double getAmount() const {
         return amount;
     }
