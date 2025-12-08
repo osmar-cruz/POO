@@ -121,6 +121,17 @@ public:
             int result = roulette.spin();
             cout << "\n>>> The roulette landed on: " << result << "\n";
 
+            int color = Bet::checkColor(result);
+string colorStr = (color == 0) ? "Green" : (color == 1) ? "Red" : "Black";
+cout << "Color: " << colorStr << "\n";
+
+int column = Bet::checkColumn(result);
+if (column > 0)
+    cout << "Column: " << column << "\n";
+else
+    cout << "Column: None (only 0)\n";
+
+
             for (const auto &pb : roundBets) {
                 Player &player = players[pb.playerIndex];
                 double win = pb.bet.checkWin(result);
@@ -146,7 +157,3 @@ int main() {
     game.run();
     return 0;
 }
-
-
-}
-
